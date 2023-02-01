@@ -1,0 +1,62 @@
+---
+import LinkItem from "./LinkItem.astro";
+import { LINKS_NAVBAR } from "../constants/constants.astro";
+import Logo from "./Logo.astro";
+
+const SOCIALS = [
+  {
+    name: "Twitter",
+    url: "https://twitter.com/astrodotbuild",
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/astrodotbuild",
+  },
+  {
+    name: "Facebook",
+    url: "https://facebook.com/astrodotbuild",
+  },
+  {
+    name: "TikTok",
+    url: "https://tiktok.com/astrodotbuild",
+  },
+];
+---
+
+<footer class="flex flex-col bg-emerald-900">
+  <section class="flex w-full"></section>
+  <section class="flex">
+    <div class="w-[50%] flex items-center gap-32 h-[300px] px-[100px] border-b-[1px] border-green-50">
+      <Logo/>
+      <ul class="flex w-full justify-center flex-col text-[16px] gap-4">
+        {
+          LINKS_NAVBAR.slice(0, 4).map((link) => (
+            <LinkItem href={link.href} title={link.title} />
+          ))
+        }
+      </ul>
+    </div>
+    <div
+      class="w-[50%] inset-0 flex flex-wrap h-[300px]"
+    >
+      {
+        SOCIALS.map((social) => (
+          <div class="flex h-[50%] w-[50%]">
+            <a
+              href={social.url}
+              class="relative w-full h-full inline-flex items-center justify-center font-medium group"
+            >
+              <span class="absolute w-full h-full border-[.5px] border-green-50 group-hover:bg-emerald-800" />
+              <span class="relative text-[24px] text-neutral-100 group-hover:text-neutral-200">
+                {social.name}
+              </span>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <h4 class="text-neutral-100 text-center font-[500] my-12">
+    Copyright ©️ 2022
+  </h4>
+</footer>
