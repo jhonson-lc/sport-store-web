@@ -1,7 +1,10 @@
 ---
-import Header from "./Header.astro";
-import { LINKS_NAVBAR } from "../constants/constants.astro";
-import Button from "./Button.astro";
+import Header from "./Header/Header.astro";
+import Hero from "./Hero.astro";
+import { LINKS_NAVBAR } from "./Header/constants.astro";
 ---
 
-  <Header links={LINKS_NAVBAR} />
+  <body>
+    <Header links={LINKS_NAVBAR} />
+    <Hero/>
+  </body>
