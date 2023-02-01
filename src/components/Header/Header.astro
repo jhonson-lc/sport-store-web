@@ -12,11 +12,12 @@ export interface Props {
 const { links } = Astro.props;
 ---
 
-<nav class="flex items-center bg-black justify-center gap-36 py-[50px]">
+<nav class="flex px-[100px] items-center bg-white justify-between gap-36 h-[90px]">
   <Logo />
   <ul class="flex gap-12">
     {links.map((link) => <LinkItem href={link.href} title={link.title} />)}
   </ul>
+  <span class="text-black">+593 098 165 7629</span>
 </nav>
 
 
